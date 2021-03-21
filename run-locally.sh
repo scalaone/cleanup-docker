@@ -1,7 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
-set -ex
-docker image build -t jaedle/cleanup-docker:development .
-docker container run --rm -it \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    jaedle/cleanup-docker:development
+docker image build -t beacr.azurecr.io/cleanup-docker .
+docker push beacr.azurecr.io/cleanup-docker

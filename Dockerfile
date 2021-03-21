@@ -1,8 +1,5 @@
-FROM docker:stable
+FROM docker
 
-WORKDIR /app
-ADD docker-entrypoint.sh cleanup.sh ./
+ADD cleanup /etc/periodic/hourly
 
-ENV CLEANUP_RATE 86400
-
-ENTRYPOINT [ "/app/docker-entrypoint.sh" ]
+CMD [ "tail", "-f", "/dev/null"]
