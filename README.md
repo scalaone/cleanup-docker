@@ -27,7 +27,7 @@ metadata:
   name: cleaner
 spec:
   containers:
-  - image: beacr.azurecr.io/cleanup-docker
+  - image: scalaone/cleanup-docker
     name: cleaner
     stdin: true
     stdinOnce: true
