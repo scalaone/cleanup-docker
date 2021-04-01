@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-echo 'Clean all:' `date` >> /var/log/imagecleaner.log
-docker system prune -af >> /var/log/imagecleaner.log
+echo 'Clean all:' `date` | tee -a /var/log/imagecleaner.log
+docker system prune -af | tee -a /var/log/imagecleaner.log
