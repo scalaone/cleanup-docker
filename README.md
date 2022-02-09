@@ -12,7 +12,7 @@ To prevent this problem I created this small docker utility.
 The following commands will be triggered on startup of the container.
 
 ```sh
-docker system prune -af
+crictl rmi --prune
 ```
 
 ## Usage
@@ -33,12 +33,12 @@ spec:
     stdinOnce: true
     tty: true
     volumeMounts:
-    - mountPath: /var/run/docker.sock
-      name: dockersock
+    - mountPath: /var/run/containerd/containerd.sock
+      name: containerdsock
       readOnly: true
   volumes:
-  - name: dockersock
+  - name: containerdsock
     hostPath:
-      path: /var/run/docker.sock
+      path: /var/run/containerd/containerd.sock
 EOF
 ```
