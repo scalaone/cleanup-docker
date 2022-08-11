@@ -1,5 +1,4 @@
 #!/bin/bash
 
-docker image build -t betint.azurecr.io/cleanup-docker -t betprod.azurecr.io/cleanup-docker .
-docker push betint.azurecr.io/cleanup-docker
-docker push betprod.azurecr.io/cleanup-docker
+docker image build --no-cache --pull -t betcommon.azurecr.io/cleanup-docker .
+docker push betcommon.azurecr.io/cleanup-docker
