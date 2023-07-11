@@ -1,8 +1,7 @@
 FROM alpine
 
-ENV VERSION="v1.27.0"
-RUN wget https://github.com/kubernetes-sigs/cri-tools/releases/download/$VERSION/crictl-$VERSION-linux-amd64.tar.gz && tar zxvf crictl-$VERSION-linux-amd64.tar.gz -C /usr/local/bin
-RUN rm -f crictl-$VERSION-linux-amd64.tar.gz
+RUN wget https://betcommon.blob.core.windows.net/docker/crictl.tar.gz && tar zxvf crictl.tar.gz -C /usr/local/bin
+RUN rm -f crictl.tar.gz
 
 ADD cleanup /etc/periodic/hourly
 
