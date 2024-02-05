@@ -38,6 +38,7 @@ spec:
       readOnly: true
   volumes:
   - name: containerdsock
+
     hostPath:
       path: /var/run/containerd/containerd.sock
 EOF
