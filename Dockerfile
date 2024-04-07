@@ -5,6 +5,6 @@ RUN rm -f crictl.tar.gz
 RUN chmod +x /usr/local/bin/crictl
 
 ADD cleanup /etc/periodic/hourly
+ADD crictl.yaml /etc/crictl.yaml
 
 CMD [ "/bin/sh", "-c", "crond -f"]
-
